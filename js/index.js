@@ -1,20 +1,17 @@
 require('babel-polyfill');
 import React from 'react';
-import ReactDom from 'react-dom';
+import ReactDOM from 'react-dom';
 import {Router, Route, IndexRoute, hashHistory} from 'react-router';
-import Sidebar from 'js/components/sidebar';
-import Inbox from './inbox';
-import Spam from './spam';
+import Sidebar from './components/sidebar';
+import Inbox from './components/inbox';
+import Spam from './components/spam';
 
 const routes =(
     <Router history={hashHistory}>
-        <Route path="/" component={Sidebar}>
-            <IndexRoute component={ContactListContainer} />
-            <Route path="/inbox" component={Inbox} />
-        </Route>
+        <Route path='/' component={Sidebar} />
     </Router>
 );
 
 document.addEventListener('DOMContentLoaded', () =>
-    ReactDOM.render(<routes />, document.getElementById('root'))
+    ReactDOM.render(routes , document.getElementById('root'))
 );
