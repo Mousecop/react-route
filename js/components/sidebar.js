@@ -9,8 +9,6 @@ export default function Sidebar (props) {
             <div className="sidebar">
                 <Link to={'/inbox'}><h4>Inbox</h4></Link>
                 <Link to={'/spam'}><h4>Spam</h4></Link>
-                <br />
-                {props.children}
             </div>
         );
 }

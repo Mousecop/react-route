@@ -2,13 +2,13 @@ require('babel-polyfill');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, IndexRoute, hashHistory} from 'react-router';
-import Sidebar from './components/sidebar';
 import Inbox from './components/inbox';
 import Spam from './components/spam';
+import App from './components/app';
 
 const routes =(
     <Router history={hashHistory}>
-        <Route path='/' component={Sidebar}>
+        <Route path='/' component={App}>
           <Route path='inbox' component={Inbox} />
           <Route path='spam' component={Spam} />
         </Route>
