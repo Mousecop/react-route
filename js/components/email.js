@@ -8,9 +8,9 @@ export default function Email (props) {
   const message = Data[mailboxName][emailId]
   return (
     <div>
-      {message.title}<br />
-      {message.to}<br />
-      {message.from}<br />
+      Title: {message.title}<br />
+      To: {message.to}<br />
+     From: {message.from}<br />
       <p>{message.content}</p>
     </div>
   );
