@@ -2,11 +2,12 @@ import React from 'react';
 import Inbox from './inbox';
 import Spam from './spam';
 
-export default class Sidebar extends React.Component () {
+export default class Sidebar extends React.Component {
     constructor(props) {
         super(props);
 
         this.displayInbox = this.displayInbox.bind(this);
+        this.displaySpam = this.displaySpam.bind(this);
 
         this.state ={
             inbox: {
@@ -47,17 +48,22 @@ export default class Sidebar extends React.Component () {
 
     displayInbox() {
         console.log("Inbox");
+       return this.state.inbox;
+
     }
 
     displaySpam() {
         console.log("Spam");
+       return this.state.spam;
     }
 
 
     render() {
         return (
             <div className="sidebar">
-    
+                <h1>Hello world</h1>
+                <Inbox displayInbox={this.displayInbox}/>
+                <Spam displaySpam={this.displaySpam} />
             </div>
         );
     }
