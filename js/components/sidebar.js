@@ -1,78 +1,16 @@
 import React from 'react';
 import Inbox from './inbox';
 import Spam from './spam';
+import Data from './email-data';
+import { Link } from 'react-router';
 
-export default class Sidebar extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.displayInbox = this.displayInbox.bind(this);
-        this.displaySpam = this.displaySpam.bind(this);
-
-        this.state ={
-            inbox: {
-                0: {
-                    id: 0,
-                    from: "billg@microsoft.com",
-                    to: "TeamWoz@Woz.org",
-                    title: "Possible work opportunity",
-                    content: "Dear Woz.  Fancy a job at Mister Softee?  Bill x"
-                },
-                1: {
-                    id: 1,
-                    from: "zuck@facebook.com",
-                    to: "TeamWoz@Woz.org",
-                    title: "Do you know PHP?",
-                    content: "Dear Woz.  We are in need of a PHP expert.  Fast.  Zuck x"
-                }
-            },
-            spam: {
-                0: {
-                    id: 0,
-                    from: "ChEaPFl1ghTZ@hotmail.com",
-                    to: "TeamWoz@Woz.org",
-                    title: "WaNt CHEEp FlitZ",
-                    content: "Theyre CheEp"
-                },
-                1: {
-                    id: 1,
-                    from: "NiKEAIRJordanZ@hotmail.com",
-                    to: "TeamWoz@Woz.org",
-                    title: "JorDanz For SAle",
-                    content: "Theyre REELY CheEp"
-                }
-            }
-        }
-    }
-
-
-    displayInbox() {
-        console.log("Inbox");
-        this.state.inbox.map(item => {
-            return <div>{item[0].title}</div>;
-        });
-
-    }
-
-    displaySpam() {
-        console.log("Spam");
-       return this.state.spam;
-    }
-
-
-    render() {
+export default function Sidebar (props) {
         return (
             <div className="sidebar">
-                <h1>Hello world</h1>
-                <Inbox displayInbox={this.displayInbox}/>
-                <Spam displaySpam={this.displaySpam} />
+                <Link to={'/inbox'}><h4>Inbox</h4></Link>
+                <Link to={'/spam'}><h4>Spam</h4></Link>
+                <br />
+                {props.children}
             </div>
         );
-    }
 }
-
-
-
-
-
-

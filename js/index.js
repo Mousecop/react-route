@@ -8,7 +8,10 @@ import Spam from './components/spam';
 
 const routes =(
     <Router history={hashHistory}>
-        <Route path='/' component={Sidebar} />
+        <Route path='/' component={Sidebar}>
+          <Route path='inbox' component={Inbox} />
+          <Route path='spam' component={Spam} />
+        </Route>
     </Router>
 );
 

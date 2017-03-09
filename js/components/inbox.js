@@ -1,10 +1,11 @@
 import React from 'react';
 
 export default function Inbox (props) {
+    console.log('hit inbox');
     return (
         <div className="inbox">
-            <p>Inbox</p>
-           <p> {props.displayInbox} </p>
+          <h1>Hi from inbox</h1>
+          
         </div>
     );
 }
