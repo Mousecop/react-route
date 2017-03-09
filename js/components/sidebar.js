@@ -48,7 +48,9 @@ export default class Sidebar extends React.Component {
 
     displayInbox() {
         console.log("Inbox");
-       return this.state.inbox;
+        this.state.inbox.map(item => {
+            return <div>{item[0].title}</div>;
+        });
 
     }
 
